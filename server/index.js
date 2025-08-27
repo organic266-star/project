@@ -29,13 +29,14 @@ console.log(allowedOrigins); // Debugging: Check if the frontend URL is loaded p
 
 // 🔧 Middleware to handle CORS
 app.use(cors({
-  origin: function (origin, callback) { 
-    if (!origin || allowedOrigins.includes(origin)) { 
-      callback(null, true); // ✅ Allow the request if it's from an allowed origin
-    } else {
-      callback(new Error('Not allowed by CORS')); // ❌ Block requests from unknown origins
-    }
-  },
+  origin:true
+  //  function (origin, callback) { 
+  //   if (!origin || allowedOrigins.includes(origin)) { 
+  //     callback(null, true); // ✅ Allow the request if it's from an allowed origin
+  //   } else {
+  //     callback(new Error('Not allowed by CORS')); // ❌ Block requests from unknown origins
+  //   }
+  // },
   credentials: true, // ✅ Allow sending cookies with requests
   methods: ['GET', 'POST', 'PUT', 'DELETE'], // ✅ Allow these HTTP methods
 }));
@@ -58,8 +59,9 @@ app.get("/ok", (req, res) => {
 const io = new Server(server, {
   pingTimeout: 60000, // ⏳ Set timeout for inactive users (1 minute)
   cors: {
-    origin: allowedOrigins[0], // ✅ Allow requests from the frontend URL
+    origin: true, // ✅ Allow requests from the frontend URL
     methods: ["GET", "POST"], // ✅ Allow only these methods
+    credentials: true
   },
 });
 console.log("[SUCCESS] Socket.io initialized with CORS"); // Debugging message
