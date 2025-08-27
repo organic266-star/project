@@ -61,7 +61,7 @@ const io = new Server(server, {
   cors: {
     origin: true, // ✅ Allow requests from the frontend URL
     methods: ["GET", "POST"], // ✅ Allow only these methods
-    credentials: true
+   
   },
 });
 console.log("[SUCCESS] Socket.io initialized with CORS"); // Debugging message
