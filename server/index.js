@@ -24,7 +24,7 @@ const PORT = process.env.PORT || 3000;
 const server = createServer(app);
 
 // 🌍 Allowed frontend origins for CORS (Cross-Origin Resource Sharing)
-const allowedOrigins = [process.env.FRONTEND_URL]; 
+const allowedOrigins = ["https://project-1-32rc.onrender.com"]; 
 console.log(allowedOrigins); // Debugging: Check if the frontend URL is loaded properly
 
 // 🔧 Middleware to handle CORS
