@@ -57,7 +57,7 @@ const AuthForm = ({ type }) => {
     return (
         <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-900 to-purple-800 text-white">
             <div className="bg-white text-gray-900 p-8 rounded-lg shadow-white shadow-2xl w-full max-w-md m-2">
-                <h2 className="text-3xl font-extrabold text-center mb-6">{type === 'signup' ? 'SignUp SlrTechCalls' : 'Login SlrTechCalls'}</h2>
+                <h2 className="text-3xl font-extrabold text-center mb-6">{type === 'signup' ? 'SignUp  ' : 'Login  '}</h2>
                 <form onSubmit={handleSubmit} className="space-y-4">
                     {type === 'signup' && (
                         <>
