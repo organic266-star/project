@@ -4,7 +4,7 @@ let socket;
 
 const getSocket = () => {
     if (!socket) {
-        socket = io("https://chatsphere-anva.onrender.com")
+        socket = io("https://project-jv7y.onrender.com")
     }
     return socket;
 }
