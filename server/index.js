@@ -29,7 +29,7 @@ console.log(allowedOrigins); // Debugging: Check if the frontend URL is loaded p
 
 // 🔧 Middleware to handle CORS
 app.use(cors({
-  origin:true
+  origin:true,
   //  function (origin, callback) { 
   //   if (!origin || allowedOrigins.includes(origin)) { 
   //     callback(null, true); // ✅ Allow the request if it's from an allowed origin
@@ -61,7 +61,7 @@ const io = new Server(server, {
   cors: {
     origin: true, // ✅ Allow requests from the frontend URL
     methods: ["GET", "POST"], // ✅ Allow only these methods
-   
+    credentials: true, 
   },
 });
 console.log("[SUCCESS] Socket.io initialized with CORS"); // Debugging message
